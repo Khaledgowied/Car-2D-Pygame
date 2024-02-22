@@ -44,14 +44,14 @@ while True:
     screen.fill(WHITE)
 
     # Update vehicle position based on speed and heading
-    position[0] += speed * dt * pygame.math.cos(pygame.math.radians(heading))
-    position[1] += speed * dt * pygame.math.sin(pygame.math.radians(heading))
+    position[0] += speed * dt * pygame.math.cos(pygame.math.radians(heading))    # Positions X, Current speed, time step of the simulation, Horizontal Component   
+    position[1] += speed * dt * pygame.math.sin(pygame.math.radians(heading))    # Position y, Current speed,  time step of the simulation, Vertical Component
 
     # Draw vehicle
     vehicle_rect = pygame.Rect(position[0] - vehicle_length / 2, position[1] - vehicle_width / 2,
-                               vehicle_length, vehicle_width)
+                               vehicle_length, vehicle_width)       # Top left corner of rectangle    
     pygame.draw.rect(screen, vehicle_color, vehicle_rect)
-    pygame.draw.circle(screen, BLACK, position, 5)  # Draw a point at the center of the vehicle
+    pygame.draw.circle(screen, BLACK, position, 5)              # Draw a point at the center of the vehicle
 
     # Update the display
     pygame.display.flip()
